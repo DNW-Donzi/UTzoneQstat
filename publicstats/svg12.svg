@@ -15,31 +15,33 @@
    id="svg2994"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="svg12.svg">
+   sodipodi:docname="svg12.svg"
+   onload="status();">
   <script
      xlink:href="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
      id="jquery" />
   <script
      type="text/javascript"
-     id="script4">function status(){
-	var text =  $('#status').text();
-	if (text=='UP') {
-		$('#status').text('Online');
-	} else {
-		$('#status').text('Offline');
-		$('#status').css('fill', '#ff0000');
-		$('#servername').text('Server is Offline!');
-		$('#servername').css('fill', '#ff0000');
-		$('#address').css('fill', '#ff0000');
-		$('#mapname').text('-');
-		$('#mapname').css('fill', '#ff0000');
-		$('#player').text('-');
-		$('#player').css('fill', '#ff0000');
-		$('#statusbox1').css('fill', '#ff0000');
-		$('#statusbox2').css('fill', '#ff0000');
-	}
-};
-</script>
+     id="script4">// <![CDATA[
+     function status(){
+		var text =  $('#status').text();
+		if (text=='UP') {
+			$('#status').text('Online');
+		} else {
+			$('#status').text('Offline');
+			$('#status').css('fill', '#ff0000');
+			$('#servername').text('Server is Offline!');
+			$('#servername').css('fill', '#ff0000');
+			$('#address').css('fill', '#ff0000');
+			$('#mapname').text('-');
+			$('#mapname').css('fill', '#ff0000');
+			$('#player').text('-');
+			$('#player').css('fill', '#ff0000');
+			$('#statusbox1').css('fill', '#ff0000');
+			$('#statusbox2').css('fill', '#ff0000');
+		}
+	};
+// ]]></script>
   <defs
      id="defs2996">
     <linearGradient
@@ -315,8 +317,7 @@
        x="388.2789"
        y="57.385342"
        id="status"
-       sodipodi:linespacing="125%"
-       onload="status();">{STATUS}</text>
+       sodipodi:linespacing="125%">{STATUS}</text>
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#d45500;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
