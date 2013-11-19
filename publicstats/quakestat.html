@@ -364,7 +364,6 @@ $(function(){
 		$('#preview').toggle();
 		$('#help').css('display', 'none');
 		var url = 'http://serverstats.utzone.de/'
-		//var url = 'http://quakestat.jeppo.de/'
 		var ip = $("#ip").val();
 		var port = $("#port").val();
 		var game = $("#game").val();
@@ -375,9 +374,9 @@ $(function(){
 			var htmlstring = '<div class="preview"><h2>Bild Vorlage ' + out + '</h2>';
 			var qurl = 'quakestat.php?game=' + game + '&serverip=' + ip + '&port=' + port + '&out=svg&template=' + out + '&delsc=' + delsc;
 			var qlink = url + qurl;
-			var htmlstring = htmlstring + '<h3>svg</h3><img src="' + qurl + '" />';
+			var htmlstring = htmlstring + '<h3>svg</h3><object type="image/svg+xml" data="' + qurl + '"></object>';
 			var htmlstring = htmlstring + '<h4>Url</h4><div class="qlink"><a href="' + qlink + '">' + qlink + '</a></div>';
-			var htmlstring = htmlstring + '<h4>html Code</h4><pre>&lt;img src="' + qlink + '" /&gt;</pre>';
+			var htmlstring = htmlstring + '<h4>html Code</h4><pre>&lt;object type="image/svg+xml" data="' + qlink + '"&gt;&lt;/object&gt;</pre>';
 			var qurl = 'quakestat.php?game=' + game + '&serverip=' + ip + '&port=' + port + '&out=png&template=' + out + '&delsc=' + delsc;
 			var qlink = url + qurl;
 			var htmlstring = htmlstring + '<h3>png</h3><img src="' + qurl + '" />';
@@ -404,3 +403,4 @@ $(function(){
 
 </body>
 </html>
+<object type="image/svg+xml" data="svg12.svg"></object></body>
