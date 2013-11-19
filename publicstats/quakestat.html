@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<title>UTzone.de ServerQuery</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="de" />
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta name="description" content="UTzone.de ServerQuery" />
+<meta name="author" content="jeppo" />
+<meta name="keywords" content="UTzone.de ServerQuery" />
+<style type="text/css">
+<!--
+body { 
+	font-family: Tahoma,Verdana,Arial,Sans-Serif;
+	font-size: 0.9em;
+	line-height: 1;
+	color: #b3b3b3;
+	background-color: #393939;
+}
+
+h1, #footer {
+	color: #cccccc;
+	background-color: #590000;
+	border-style: solid;
+	border-width: thin;
+	border-color: #1a1a1a;
+	border-top-style: solid;
+	border-top-width: thick;
+	border-top-color: #282829;
+	margin: 10px;
+	padding: 5px;
+}
+
+.box {
+	color: #b5b5b5;
+	background-color: #2b2b2b;
+	border-style: solid;
+	border-width: thin;
+	border-color: #1a1a1a;
+	border-top-style: solid;
+	border-top-width: thick;
+	border-top-color: #282829;
+	margin: 10px;
+	padding: 5px;
+}
+
+pre, .qlink {
+	color: #b5b5b5;
+	background-color: #1e1e1e;
+	border-style: solid;
+	border-width: thin;
+	border-color: #1a1a1a;
+	border-top-style: solid;
+	border-top-width: thick;
+	border-top-color: #282829;
+	margin: 10px;
+	padding: 5px;
+	overflow: auto;
+}
+
+form p { display: inline-block; }
+
+a:active, a:hover {	color: #FFA850; }
+a:link, a:visited {	color: #78D2FF; }
+
+-->
+</style>
+</head>
+<body>
+
+<h1>UTzone.de ServerQuery</h1>
+
+<form id="form" class="box" action="javascript:">
+	<p>
+		<label for="ip">Ip</label>
+		<input id="ip" name="ip" type="text" title="Gameserver Ip Adresse." value="95.156.230.70" size="15" maxlength="15" />
+	</p>
+	<p>
+		<label for="port">Port</label>
+		<input id="port" name="port" type="text" title="Query Port des Game Servers." value="15000" size="5" maxlength="5"/>
+	</p>
+	<p>
+		<label for="game">Spiel</label>
+		<select id="game" name="game" title="Spiel das auf dem Server läuft.">
+			<option value="a2s">Half-Life 2 new Server</option>
+			<option value="ams">America's Army v2.x Server</option>
+			<option value="bfbc2">Battlefield Bad Company 2 Server</option>
+			<option value="bfs">BFRIS Server</option>
+			<option value="cod2m">Call of Duty 2 Master Server</option>
+			<option value="cod2s">Call of Duty 2 Server</option>
+			<option value="cod4m">Call of Duty 4 Master Server</option>
+			<option value="cod4s">Call of Duty 4 Server</option>
+			<option value="codm">Call of Duty Master Server</option>
+			<option value="cods">Call of Duty Server</option>
+			<option value="crs">Command and Conquer: Renegade Server</option>
+			<option value="crysis">Crysis Server</option>
+			<option value="cubes">Sauerbraten Server</option>
+			<option value="d3g">Descent3 Gamespy Protocol Server</option>
+			<option value="d3m">Descent3 Master (PXO) Server</option>
+			<option value="d3p">Descent3 PXO protocol Server</option>
+			<option value="d3s">Descent3 Server</option>
+			<option value="dm3m">Doom 3 Master Server</option>
+			<option value="dm3s">Doom 3 Server</option>
+			<option value="efm">Star Trek: Elite Force Server</option>
+			<option value="efs">Star Trek: Elite Force Server</option>
+			<option value="etqws">QuakeWars Server</option>
+			<option value="eye">All Seeing Eye Protocol Server</option>
+			<option value="fcs">FarCry Server</option>
+			<option value="fls">Frontlines-Fuel of War Server</option>
+			<option value="gps">Gamespy Protocol Server</option>
+			<option value="grs">Ghost Recon Server</option>
+			<option value="gs2">Gamespy V2 Protocol Server</option>
+			<option value="gs3">Gamespy V3 Protocol Server</option>
+			<option value="gs4">Gamespy V4 Protocol Server</option>
+			<option value="gs4">Minecraft Server</option>
+			<option value="gsm">Gamespy Master Server</option>
+			<option value="h2s">Hexen II Server</option>
+			<option value="hazes">Haze Protocol Server</option>
+			<option value="hl2s">Half-Life 2 Server</option>
+			<option value="hla2s">Half-Life Server</option>
+			<option value="hla2sm">Steam Master Server</option>
+			<option value="hlm">Half-Life Master Server</option>
+			<option value="hlqs">Half-Life Server</option>
+			<option value="hls">Half-Life Server</option>
+			<option value="hrs">Heretic II Server</option>
+			<option value="hwm">HexenWorld Master Server</option>
+			<option value="hws">HexenWorld Server</option>
+			<option value="iourtm">ioUrbanTerror Master Server</option>
+			<option value="iourts">ioUrbanTerror Server</option>
+			<option value="jk3m">Jedi Knight: Jedi Academy Server</option>
+			<option value="jk3s">Jedi Knight: Jedi Academy Server</option>
+			<option value="kps">Kingpin Server</option>
+			<option value="maqs">Medal of Honor: Allied Assault (Q) Server</option>
+			<option value="mas">Medal of Honor: Allied Assault Server</option>
+			<option value="mhs">Medal of Honor: Allied Assault Server</option>
+			<option value="mumble">Mumble Server</option>
+			<option value="netp">NetPanzer Server</option>
+			<option value="netpm">NetPanzer Master Server</option>
+			<option value="nexuizm">Nexuiz Master Server</option>
+			<option value="nexuizs">Nexuiz Server</option>
+			<option value="openarenam">OpenArena Master Server</option>
+			<option value="openarenas">OpenArena Server</option>
+			<option value="ottdm">openTTD Master Server</option>
+			<option value="ottds">OpenTTD Server</option>
+			<option value="preym">Prey Master Server</option>
+			<option value="preys">PREY Server</option>
+			<option value="prs">Pariah Server</option>
+			<option value="q2m">Quake II Master Server</option>
+			<option value="q2s">Quake II Server</option>
+			<option value="q3m">Quake III Master Server</option>
+			<option value="q3s">Quake III: Arena Server</option>
+			<option value="q4m">Quake 4 Master Server</option>
+			<option value="q4s">Quake 4 Server</option>
+			<option value="qs">Quake Server</option>
+			<option value="qwm">QuakeWorld Master Server</option>
+			<option value="qws">QuakeWorld Server</option>
+			<option value="rss">Ravenshield Server</option>
+			<option value="rwm">Return to Castle Wolfenstein Master Server</option>
+			<option value="rws">Return to Castle Wolfenstein Server</option>
+			<option value="sas">Savage Server</option>
+			<option value="sfs">Soldier of Fortune Server</option>
+			<option value="sgs">Shogo: Mobile Armor Division Server</option>
+			<option value="sms">Serious Sam Server</option>
+			<option value="sns">Sin Server</option>
+			<option value="sof2m">SOF2 Master Server</option>
+			<option value="sof2m1.0">SOF2 Master (1.0) Server</option>
+			<option value="sof2s">Soldier of Fortune 2 Server</option>
+			<option value="stm">Steam Master Server</option>
+			<option value="stma2s">Steam Master for A2S Server</option>
+			<option value="stmhl2">Steam Master for HL2 Server</option>
+			<option value="t2m">Tribes 2 Master Server</option>
+			<option value="t2s">Tribes 2 Server</option>
+			<option value="tbm">Tribes Master Server</option>
+			<option value="tbs">Tribes Server</option>
+			<option value="tee">Teeworlds Server</option>
+			<option value="terraria">Terraria Server</option>
+			<option value="tm">TrackMania Server</option>
+			<option value="tremulous">Tremulous Server</option>
+			<option value="tremulousm">Tremulous Master Server</option>
+			<option value="ts2">Teamspeak 2 Server</option>
+			<option value="ts3">Teamspeak 3 Server</option>
+			<option value="uns">Unreal Server</option>
+			<option value="ut2004m">UT2004 Master Server</option>
+			<option selected="selected" value="ut2004s">UT2004 Server</option>
+			<option value="ut2s">Unreal Tournament 2003 Server</option>
+			<option value="ut3s">UT3 Server</option>
+			<option value="vent">Ventrilo Server</option>
+			<option value="warsowm">Warsow Master Server</option>
+			<option value="warsows">Warsow Server</option>
+			<option value="waws">Call of Duty World at War Server</option>
+			<option value="wics">World in Conflict Server</option>
+			<option value="woetm">Enemy Territory Master Server</option>
+			<option value="woets">Enemy Territory Server</option>
+			<option value="wolfs">Wolfenstein Server</option>
+		</select>
+	</p>
+	<p>
+		<label for="out">Ausgabe</label>
+		<select id="out" name="out" title="Formatierung der Ausgabe.">
+			<option value="html">html</option>
+			<option value="xml">xml</option>
+			<option value="json">json</option>
+			<option value="txt">txt</option>
+			<option value="irc">irc</option>
+			<option value="cms">cms</option>
+			<option value="01">Bild 01</option>
+			<option value="02">Bild 02</option>
+			<option value="03">Bild 03</option>
+			<option value="04">Bild 04</option>
+			<option value="05">Bild 05</option>
+			<option value="06">Bild 06</option>
+			<option value="07">Bild 07</option>
+			<option value="08">Bild 08</option>
+			<option selected="selected" value="09">Bild 09</option>
+			<option value="10">Bild 10</option>
+			<option value="11">Bild 11</option>
+			<option value="12">Bild 12</option>
+		</select>
+	</p>
+	<p>
+		<label for="delsc">entf. Sonderz.</label>
+		<select id="delsc" name="delsc" title="Sonderzeichen entfernen ja/nein.">
+			<option selected="selected" value="true">ja</option>
+			<option value="false">nein</option>
+		</select>
+	</p>
+	<p>
+		<input id="previewButton" type="button" value="Vorschau" />
+		<input id="helpButton" type="button" value="Hilfe zu quakestat.php" />
+	</p>
+</form>
+
+<div id="help" class="box" style="display: none;">
+	<h2>Hilfe zu quakestat.php</h2>
+	<h3>Aufruf:</h3>
+	<pre>quakestat.php?game=ut2004s&amp;serverip=95.156.230.70&amp;port=15000&amp;out=svg&amp;template=03&amp;delsc=true</pre>
+	<h3>Parameter:</h3>
+	<ul>
+		<li>game = qstat Spielname.</li>
+		<li>serverip = IP Adresse des Servers.</li>
+		<li>port = Query Port des Servers.</li>
+		<li>out = Ausgabe Formatierung (siehe unten).</li>
+		<li>template = Nummer der SVG Bild Vorlage die benutzt werden soll.</li>
+		<li>delsc = Sonderzeichen entfernen true oder false.</li>
+	</ul>
+	<h4>Parameter Ausgabe Formatierung:</h4>
+	<ul>
+		<li>html = Ausgabe Html Code (default).</li>
+		<li>json = Ausgabe Javascript Json Format.</li>
+		<li>xml = Ausgabe Xml Code.</li>
+		<li>cms = Ausgabe Komma getrennte Liste.</li>
+		<li>txt = Ausgabe einfache Textzeile.</li>
+		<li>irc = Ausgabe Iirc formatierter Text.</li>
+		<li>svg = Ausgabe als SVG Bild.</li>
+		<li>png = Ausgabe als PNG Bild.</li>
+	</ul>
+	<h3>SVG Bilder Vorlagen erstellen:</h3>
+	Zm erstellen empfehle ich das Programm <a href="http://inkscape.org/">Inkscape</a>.
+	<br/>
+	<a href="svg03.svg">Beispiel SVG Vorlage.</a>
+	<h4>Unterstütze Variablen für SVG Bilder Vorlagen:</h4>
+	<ul>
+		<li>{SERVERNAME}</li>
+		<li>{HOSTNAME} = Hostname des Servers.</li>
+		<li>{ADDRESS} = IP Adresse des Servers.</li>
+		<li>{STATUS} = Status des Servers UP oder Down.</li>
+		<li>{GAME} = Spielname.</li>
+		<li>{GAMETYPE} = Spielart die gerade läuft.</li>
+		<li>{MAPNAME} = Name der Map die zur Zeit gespielt wird.</li>
+		<li>{N} = Anzahl der Spieler auf dem Server</li>
+		<li>{M} = Maximale Anzahl der erlaubten Spieler auf dem Server.</li>
+	</ul>
+</div>
+
+<div id="preview" class="box"></div>
+
+<div id="helpform" class="box">
+	<h3>Hilfe:</h3>
+	<ul>
+		<li>IP = Gameserver Ip Adresse.</li>
+		<li>Port = Query Port des Game Servers.</li>
+		<li>Spiel = Spiel das auf dem Server läuft.</li>
+		<li>Ausgabe = Formatierung der Ausgabe.</li>
+		<li>entf. Sonderz. = Sonderzeichen entfernen ja oder nein.</li>
+		<li>
+			<ul>
+				<li>html = Ausgabe Html Code.</li>
+				<li>json = Ausgabe Javascript Json Format.</li>
+				<li>xml = Ausgabe Xml Code.</li>
+				<li>cms = Ausgabe Komma getrennte Liste.</li>
+				<li>txt = Ausgabe einfache Textzeile.</li>
+				<li>irc = Ausgabe Iirc formatierter Text.</li>
+				<li>Bild = Ausgabe als SVG oder PNG Bild.</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<div id="helpimg" class="box">
+	<h3>Ausgabe Bilder:</h3>
+	<ul>
+		<li>
+			<h4>Bild 01</h4>
+			<img src="svg01.svg" alt="Vorlage Bild 01" />
+		</li>
+		<li>
+			<h4>Bild 02</h4>
+			<img src="svg02.svg" alt="Vorlage Bild 02" />
+		</li>
+		<li>
+			<h4>Bild 03</h4>
+			<img src="svg03.svg" alt="Vorlage Bild 03" />
+		</li>
+		<li>
+			<h4>Bild 04</h4>
+			<img src="svg04.svg" alt="Vorlage Bild 04" />
+		</li>
+		<li>
+			<h4>Bild 05</h4>
+			<img src="svg05.svg" alt="Vorlage Bild 05" />
+		</li>
+		<li>
+			<h4>Bild 06</h4>
+			<img src="svg06.svg" alt="Vorlage Bild 06" />
+		</li>
+		<li>
+			<h4>Bild 07</h4>
+			<img src="svg07.svg" alt="Vorlage Bild 07" />
+		</li>
+		<li>
+			<h4>Bild 08</h4>
+			<img src="svg08.svg" alt="Vorlage Bild 08" />
+		</li>
+		<li>
+			<h4>Bild 09</h4>
+			<img src="svg09.svg" alt="Vorlage Bild 09" />
+		</li>
+		<li>
+			<h4>Bild 10</h4>
+			<img src="svg10.svg" alt="Vorlage Bild 10" />
+		</li>
+		<li>
+			<h4>Bild 11</h4>
+			<img src="svg11.svg" alt="Vorlage Bild 11" />
+		</li>
+		<li>
+			<h4>Bild 12</h4>
+			<img src="svg12.svg" alt="Vorlage Bild 12" />
+		</li>
+	</ul>
+</div>
+
+<div id="footer">quakestat php benutzt <a href="http://qstat.sourceforge.net/">QStat - Real-time game server stats</a>, danke.</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">// <![CDATA[
+$(function(){
+	$( "#previewButton" ).click(function() {
+		$('#preview').toggle();
+		$('#help').css('display', 'none');
+		var url = 'http://serverstats.utzone.de/'
+		//var url = 'http://quakestat.jeppo.de/'
+		var ip = $("#ip").val();
+		var port = $("#port").val();
+		var game = $("#game").val();
+		var out = $("#out").val();
+		var delsc = $("#delsc").val();
+		var codeout = "html json xml cms txt irc";
+		if ( codeout.indexOf(out) == -1) {
+			var htmlstring = '<div class="preview"><h2>Bild Vorlage ' + out + '</h2>';
+			var qurl = 'quakestat.php?game=' + game + '&serverip=' + ip + '&port=' + port + '&out=svg&template=' + out + '&delsc=' + delsc;
+			var qlink = url + qurl;
+			var htmlstring = htmlstring + '<h3>svg</h3><img src="' + qurl + '" />';
+			var htmlstring = htmlstring + '<h4>Url</h4><div class="qlink"><a href="' + qlink + '">' + qlink + '</a></div>';
+			var htmlstring = htmlstring + '<h4>html Code</h4><pre>&lt;img src="' + qlink + '" /&gt;</pre>';
+			var qurl = 'quakestat.php?game=' + game + '&serverip=' + ip + '&port=' + port + '&out=png&template=' + out + '&delsc=' + delsc;
+			var qlink = url + qurl;
+			var htmlstring = htmlstring + '<h3>png</h3><img src="' + qurl + '" />';
+			var htmlstring = htmlstring + '<h4>Url</h4><div class="qlink"><a href="' + qlink + '">' + qlink + '</a></div>';
+			var htmlstring = htmlstring + '<h4>html Code</h4><pre>&lt;img src="' + qlink + '" /&gt;</pre>';
+			var htmlstring = htmlstring + '</div>';
+			$( '#preview' ).html( htmlstring );
+		} else {
+			var qurl = 'quakestat.php?game=' + game + '&serverip=' + ip + '&port=' + port + '&out=' + out + '&delsc=' + delsc;
+			var qlink = url + qurl;
+			$( '#preview' ).html( '<div class="preview"><h2>' + out + '</h2><h3>Preview</h3><pre><code id="code' + out +'">Lade Inhalt: <img src="loading.gif" alt="Ladebalken" /></code></pre><h3>Url</h3><div class="qlink"><a href="' + qlink + '">' + qlink + '</a></div></div>' );
+			$( '#code' + out ).load( qurl, function() {
+				var htmlstring = $( '#code' + out ).html();
+				$( '#code' + out ).text(htmlstring);
+			});
+		}
+		$('#preview').toggle("slow");
+	});
+	$( "#helpButton" ).click(function() {
+		$('#help').toggle("slow");
+	});
+});
+// ]]></script>
+
+</body>
+</html>
