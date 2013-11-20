@@ -6,7 +6,8 @@ howto patch qstat:
 http://www.utzone.de/forum/showthread.php?t=3219
 
 
-
+Serverstats live
+http://serverstats.utzone.de/
 
 
 
