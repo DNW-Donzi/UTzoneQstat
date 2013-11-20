@@ -5,6 +5,19 @@
 	// Beschreibung: Anzeige von Spielservern mithilfe von quakestat (qstat).
 	// -------------------------------------------------------------------------
 	
+	// Sonderzeichen und Farbcodes aus String löschen
+	function delsc( $input ) {
+		// Trackmaniafarbcodes löschen
+		$input = preg_replace('/\$[wnismg]/', '', $input);
+		$input = preg_replace('/\$[0-9a-zA-Z]{3}/', '', $input);
+		// Sonderzeichen löschen
+		$input = preg_replace('/[^\w\d\.\ ]/', '', $input);
+		// Leerzeichen löschen
+		$input = preg_replace('/\s\s+/', ' ', $input);
+		$input = preg_replace('/^\s+/', '', $input);
+		return ($input);
+	}
+
 	// Hilfetext
 	$help='Beispiel: quakestat.php?game=GAME&serverip=IP&port=PORT&out=OUT&template=NR&delsc=TRUE';
 	
@@ -41,26 +54,26 @@
 	}
 	
 	// quakestat ausfuehren und Ausgabe in Variable query ablegen
-	$query = shell_exec('quakestat -xml -' . $game . ' ' . $serverip . ':' . $port);
+	$query = shell_exec('quakestat -cfg qstat.cfg -Ts qstatTs.xml -' . $game . ' ' . $serverip . ':' . $port);
 	
 	if (isset($query)) {
 		// Ausgabe von quakestat in Variablen ablegen
 		$xml = simplexml_load_string($query);
 		if ($delsc == 'true') {
-			$name = preg_replace('/[^\w\d\.\ ]/si', '', $xml->server->name);
-			$name = preg_replace('/\s\s+/', ' ', $name);
-			$name = preg_replace('/^\s+/', '', $name);
+			$name = delsc( $xml->name );
+			$map = delsc( $xml->map );
 		} else {
-			$name = $xml->server->name;
+			$name = $xml->name;
+			$map = $xml->map;
 		}
-		$hostname = $xml->server->hostname;
-		$address = $xml->server['address'];
-		$status = $xml->server['status'];
-		$game = $xml->server['type'];
-		$gametype = $xml->server->gametype;
-		$map = $xml->server->map;
-		$numplayers = $xml->server->numplayers;
-		$maxplayers = $xml->server->maxplayers;
+		$hostname = $xml->hostname;
+		$address = $xml->address;
+		$status = $xml->status;
+		$game = $xml->game;
+		$gamestring = $xml->gamestring;
+		$gametype = $xml->gametype;
+		$numplayers = $xml->numplayers;
+		$maxplayers = $xml->maxplayers;
 		
 		// Ausgabe formatieren
 		switch ($out) {
@@ -71,7 +84,7 @@
 				echo 'Server: '.$name.', Hostname: '.$hostname.', Address: '.$address.', Status: '.$status.', Game: '.$game.', Gametype: '.$gametype.', Map: '.$map.', Player: '.$numplayers.'/'.$maxplayers;
 			break;
 			case "irc":
-				echo 'Server: '.$name.', Hostname: '.$hostname.', Gametype: '.$gametype.', Map: '.$map.', Player: '.$numplayers.'/'.$maxplayers;
+				echo 'Server: '.$name.', Hostname: '.$hostname.', Game: '.$game.', Gametype: '.$gametype.', Map: '.$map.', Player: '.$numplayers.'/'.$maxplayers;
 			break;
 			case "cms":
 				echo $name.','.$hostname.','.$address.','.$status.','.$game.','.$gametype.','.$map.','.$numplayers.','.$maxplayers;
@@ -108,6 +121,7 @@
 				echo '<table border="0" class="quakestat">'."\n";
 				echo '<tr><th>Name:</th><th>'.$name.'</th></tr>'."\n";
 				echo '<tr><td>Hostame:</td><td>'.$hostname.'</td></tr>'."\n";
+				echo '<tr><td>Game:</td><td>'.$game.'</td></tr>'."\n";
 				echo '<tr><td>Gametype:</td><td>'.$gametype.'</td></tr>'."\n";
 				echo '<tr><td>Map:</td><td>'.$map.'</td></tr>'."\n";
 				echo '<tr><td>Player:</td><td>'.$numplayers.'/'.$maxplayers.'</td></tr>'."\n";

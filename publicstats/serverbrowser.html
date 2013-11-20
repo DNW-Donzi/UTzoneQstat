@@ -87,29 +87,29 @@ td:first-child {
 	<server ip="95.156.230.70" port="18000" game="ut2004s" memo="" />
 	<server ip="95.156.230.70" port="9999" game="ut2004s" memo="" />
 	<server ip="95.156.230.70" port="12060" game="uns" memo="" />
-	<server ip="95.156.230.74" port="25565" game="gs4" memo="" />
+	<server ip="95.156.230.74" port="25565" game="minec" memo="" />
 	<server ip="95.156.230.70" port="65000" game="ut2004s" memo="" />
 	<server ip="95.156.230.70" port="11337" game="uns" memo="" />
 	<server ip="95.156.230.70" port="6666" game="ut2004s" memo="" />
 	<server ip="95.156.230.70" port="10686" game="ut2004s" memo="" />
 	<server ip="95.156.230.70" port="11000" game="ut2004s" memo="" />
 	<server ip="95.156.230.70" port="12000" game="uns" memo="" />
-	<server ip="95.156.230.70" port="27015" game="a2s" memo="" />
+	<server ip="95.156.230.70" port="27015" game="l4d2" memo="" />
 	<server ip="95.156.230.70" port="44400" game="warsows" memo="" />
 	<server ip="95.156.230.70" port="44500" game="warsows" memo="" />
 	<server ip="95.156.230.70" port="44600" game="warsows" memo="" />
 	<server ip="95.156.230.73" port="22350" game="tee" memo="" />
 	<server ip="95.156.230.73" port="22351" game="tee" memo="" />
 	<server ip="95.156.230.73" port="22352" game="tee" memo="" />
-	<server ip="95.156.230.73" port="27015" game="a2s" memo="" />
-	<server ip="95.156.230.73" port="27115" game="a2s" memo="" />
+	<server ip="95.156.230.73" port="27015" game="l4d2" memo="" />
+	<server ip="95.156.230.73" port="27115" game="l4d2" memo="" />
 	<server ip="95.156.230.73" port="32370" game="cubes" memo="" />
 	<server ip="95.156.230.74" port="2352" game="tm" memo="" />
 	<server ip="95.156.230.74" port="2355" game="tm" memo="" />
 	<server ip="95.156.230.74" port="2358" game="tm" memo="" />
 	<server ip="95.156.230.74" port="2361" game="tm" memo="" />
-	<server ip="95.156.230.74" port="2364" game="tm" memo="" />
-	<server ip="95.156.230.74" port="32350" game="gs4" memo="meins, meins, meins" />
+	<server ip="95.156.230.74" port="2364" game="shootm" memo="" />
+	<server ip="95.156.230.74" port="32350" game="minec" memo="meins, meins, meins" />
 	<server ip="95.156.230.73" port="10370" game="ut2004s" memo="" />
 	<server ip="95.156.230.72" port="10877" game="ut2004s" memo="" />
 	<server ip="95.156.230.71" port="5000" game="ut2004s" memo="" />
@@ -128,8 +128,8 @@ td:first-child {
 <script type="text/javascript">// <![CDATA[
 $(function(){
 	$( "server" ).each(function( index ) {
-		var url = 'http://serverstats.utzone.de/'
-		//var url = 'http://quakestat.jeppo.de/'
+		//var url = 'http://serverstats.utzone.de/'
+		var url = 'http://quakestat.jeppo.de/'
 		var ip = $( this ).attr("ip");
 		var port = $( this ).attr("port");
 		var game = $( this ).attr("game");

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<server>
+	<game>$TYPE</game>
+	<gamestring>$TYPESTRING</gamestring>
+	<address>$ARG</address>
+	$(IF:UP)<status>UP</status>$(ENDIF)$(IF:DOWN)<status>DOWN</status>$(ENDIF)
+	<hostname>$HOSTNAME</hostname>
+	<name>$SERVERNAME</name>
+	<gametype>$GAME</gametype>
+	<map>$MAP</map>
+	<numplayers>$PLAYERS</numplayers>
+	<maxplayers>$MAXPLAYERS</maxplayers>
+</server>

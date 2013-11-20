@@ -117,7 +117,6 @@ a:link, a:visited {	color: #78D2FF; }
 			<option value="gs2">Gamespy V2 Protocol Server</option>
 			<option value="gs3">Gamespy V3 Protocol Server</option>
 			<option value="gs4">Gamespy V4 Protocol Server</option>
-			<option value="gs4">Minecraft Server</option>
 			<option value="gsm">Gamespy Master Server</option>
 			<option value="h2s">Hexen II Server</option>
 			<option value="hazes">Haze Protocol Server</option>
@@ -135,9 +134,11 @@ a:link, a:visited {	color: #78D2FF; }
 			<option value="jk3m">Jedi Knight: Jedi Academy Server</option>
 			<option value="jk3s">Jedi Knight: Jedi Academy Server</option>
 			<option value="kps">Kingpin Server</option>
+			<option value="l4d2">Left four Dead 2 Server</option>
 			<option value="maqs">Medal of Honor: Allied Assault (Q) Server</option>
 			<option value="mas">Medal of Honor: Allied Assault Server</option>
 			<option value="mhs">Medal of Honor: Allied Assault Server</option>
+			<option value="minec">Minecraft Server</option>
 			<option value="mumble">Mumble Server</option>
 			<option value="netp">NetPanzer Server</option>
 			<option value="netpm">NetPanzer Master Server</option>
@@ -166,6 +167,7 @@ a:link, a:visited {	color: #78D2FF; }
 			<option value="sfs">Soldier of Fortune Server</option>
 			<option value="sgs">Shogo: Mobile Armor Division Server</option>
 			<option value="sms">Serious Sam Server</option>
+			<option value="shootm">Shootmania Server</option>
 			<option value="sns">Sin Server</option>
 			<option value="sof2m">SOF2 Master Server</option>
 			<option value="sof2m1.0">SOF2 Master (1.0) Server</option>
@@ -376,12 +378,14 @@ $(function(){
 			var qlink = url + qurl;
 			var htmlstring = htmlstring + '<h3>svg</h3><object type="image/svg+xml" data="' + qurl + '"></object>';
 			var htmlstring = htmlstring + '<h4>Url</h4><div class="qlink"><a href="' + qlink + '">' + qlink + '</a></div>';
-			var htmlstring = htmlstring + '<h4>html Code</h4><pre>&lt;object type="image/svg+xml" data="' + qlink + '"&gt;&lt;/object&gt;</pre>';
+			var htmlstring = htmlstring + '<h4>Webseiten Code</h4><pre>&lt;object type="image/svg+xml" data="' + qlink + '"&gt;&lt;/object&gt;</pre>';
 			var qurl = 'quakestat.php?game=' + game + '&serverip=' + ip + '&port=' + port + '&out=png&template=' + out + '&delsc=' + delsc;
 			var qlink = url + qurl;
+			var htmlstring = htmlstring + '<hr />';
 			var htmlstring = htmlstring + '<h3>png</h3><img src="' + qurl + '" />';
 			var htmlstring = htmlstring + '<h4>Url</h4><div class="qlink"><a href="' + qlink + '">' + qlink + '</a></div>';
-			var htmlstring = htmlstring + '<h4>html Code</h4><pre>&lt;img src="' + qlink + '" /&gt;</pre>';
+			var htmlstring = htmlstring + '<h4>Webseiten Code</h4><pre>&lt;img src="' + qlink + '" /&gt;</pre>';
+			var htmlstring = htmlstring + '<h4>Forum Code</h4><pre>[img]' + qlink + '[/img]</pre>';
 			var htmlstring = htmlstring + '</div>';
 			$( '#preview' ).html( htmlstring );
 		} else {
@@ -403,4 +407,4 @@ $(function(){
 
 </body>
 </html>
-<object type="image/svg+xml" data="svg12.svg"></object></body>
+
